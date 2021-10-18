@@ -1,6 +1,7 @@
 
 public class LinkedList {
 	Node head;
+	Node tail;
 
 	public void show() {
 		Node node = head;
@@ -52,8 +53,44 @@ public class LinkedList {
 		}
 	}
 
-	public void pop() {
-		this.head = this.head.next;
-	}
+	public void popLast() {
+		Node n = head;
+		while (n.next.next != null) {
+			n = n.next;
+		}
 
+		n.next = null;
+	}
 }
+		
+//		if (head == null)
+//
+//            return null;
+// 
+//
+//        if (head.next == null) {
+//
+//            return null;
+//
+//        }
+// 
+//
+//        // Find the second last node
+//
+//        Node second_last = head;
+//
+//        while (second_last.next.next != null)
+//
+//            second_last = second_last.next;
+// 
+//
+//        // Change next of second last
+//
+//        second_last.next = null;
+// 
+//
+//        return head;
+//	}
+//
+//		
+
