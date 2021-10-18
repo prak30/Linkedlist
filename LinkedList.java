@@ -35,7 +35,7 @@ public class LinkedList {
 		head = node;
 	}
 
-	public void insertAt(int index, int data) {
+	public void insertInBetween(int index, int data) {
 		Node node = new Node();
 		node.data = data;
 		node.next = null;
@@ -51,4 +51,6 @@ public class LinkedList {
 
 		}
 	}
+	
+	
 }
