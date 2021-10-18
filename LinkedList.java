@@ -51,6 +51,9 @@ public class LinkedList {
 
 		}
 	}
-	
-	
+
+	public void pop() {
+		this.head = this.head.next;
+	}
+
 }
