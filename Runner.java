@@ -6,11 +6,8 @@ public class Runner {
 		list.insert(56);
 		list.insert(30);
 		list.insert(70);
-		list.show();
-		System.out.println();
-		list.popLast();
+		list.searchNode(30);
 	
-		System.out.println("Final seq");
 		list.show();
 		
 	}

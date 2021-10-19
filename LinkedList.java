@@ -53,44 +53,29 @@ public class LinkedList {
 		}
 	}
 
-	public void popLast() {
+
+	public Node searchNode(int value) {
 		Node n = head;
-		while (n.next.next != null) {
-			n = n.next;
+		int index = 1;
+		boolean flag = false;
+		if (head == null) {
+			System.out.println("empty list");
+		} else {
+			while (n != null) {
+				if (n.data == value) {
+					flag = true;
+					break;
 		}
-
-		n.next = null;
+		index++;
+		n = n.next;
+			}
+		}
+		if (flag) {
+			System.out.println("Value " + value + " is at " + index);	
+		} else {
+			System.out.println("element absent");
+		}
+		return n;
 	}
-}
-		
-//		if (head == null)
-//
-//            return null;
-// 
-//
-//        if (head.next == null) {
-//
-//            return null;
-//
-//        }
-// 
-//
-//        // Find the second last node
-//
-//        Node second_last = head;
-//
-//        while (second_last.next.next != null)
-//
-//            second_last = second_last.next;
-// 
-//
-//        // Change next of second last
-//
-//        second_last.next = null;
-// 
-//
-//        return head;
-//	}
-//
-//		
 
+	}
