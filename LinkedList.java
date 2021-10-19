@@ -49,10 +49,8 @@ public class LinkedList {
 			}
 			node.next = n.next;
 			n.next = node;
-
 		}
 	}
-
 
 	public Node searchNode(int value) {
 		Node n = head;
@@ -65,17 +63,34 @@ public class LinkedList {
 				if (n.data == value) {
 					flag = true;
 					break;
-		}
-		index++;
-		n = n.next;
+				}
+				index++;
+				n = n.next;
 			}
 		}
 		if (flag) {
-			System.out.println("Value " + value + " is at " + index);	
+			System.out.println("Value " + value + " is at " + index);
 		} else {
 			System.out.println("element absent");
 		}
 		return n;
 	}
 
+	public Node searchNodeAt(int value, Node newNode) {
+		Node tempNode = head;
+		if (head == null) {
+			System.out.println("empty list");
+		} else {
+			while (tempNode != null) {
+				if (tempNode.data == value) {
+					break;
+				}
+				tempNode = tempNode.next;
+			}
+			Node tempNodeNext = tempNode.next;
+			tempNode.next = newNode;
+			newNode.next = tempNodeNext;
+		}
+		return tempNode;
 	}
+}
