@@ -3,6 +3,7 @@ public class LinkedList {
 	Node head;
 	Node tail;
 
+
 	public void show() {
 		Node node = head;
 		while (node.next != null) {
@@ -10,9 +11,18 @@ public class LinkedList {
 			node = node.next;
 		}
 		System.out.print(node.data);
-
 	}
-
+	
+	public int findSize() {
+		Node node = head;
+		int count = 1;
+		while (node.next != null) {
+			count++;
+			node = node.next;
+		}
+		return count;
+	}
+	
 	public void insert(int data) {
 		Node node = new Node();
 		node.data = data;
@@ -93,4 +103,20 @@ public class LinkedList {
 		}
 		return tempNode;
 	}
-}
+
+	public void deleteNode(int value)
+	{
+		if(this.head == null)
+		{
+			System.out.println("list is empty");
+		}
+		Node tempNode = head;
+		while(tempNode.next.data != value)
+		{
+			tempNode = tempNode.next;
+		}
+		Node previousNode = tempNode;
+		Node nextNode = tempNode.next.next;
+		previousNode.next = nextNode;
+		}
+	}
